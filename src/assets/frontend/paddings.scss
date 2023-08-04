@@ -1,0 +1,14 @@
+@for  $index from 1 through 4 {
+  .pt-#{$index}{
+    padding-top: #{$index}rem;
+  }
+
+  .pb-#{$index}{
+    padding-bottom: #{$index}rem;
+  }
+
+  .px-#{$index}{
+    padding-left: #{$index}rem;
+    padding-right: #{$index}rem;
+  }
+}
