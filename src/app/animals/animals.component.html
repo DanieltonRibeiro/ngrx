@@ -1,0 +1,11 @@
+<ng-container *ngIf="(animas$ | async) as animals">
+
+  <div class="pt-1">
+    <ng-container *ngFor="let animal of animals; let index = index">
+      <span class="badge badge-info badge-pill" (click)="removeAnimal(index)">
+        {{ animal }}
+      </span>
+    </ng-container>
+  </div>
+
+</ng-container>
