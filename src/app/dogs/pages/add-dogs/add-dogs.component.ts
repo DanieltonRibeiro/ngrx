@@ -1,15 +1,13 @@
 import { Component, HostListener } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
-import { AnimalActions } from '../actions/animal.actions';
-import { Observable } from 'rxjs';
-import { AnimalsState } from '../states/animals.states';
+import { Store } from '@ngxs/store';
+import { DogActions } from '../../actions/dogActions';
 
 @Component({
-  selector: 'app-zoo',
-  templateUrl: './zoo.component.html',
-  styleUrls: ['./zoo.component.scss']
+  selector: 'app-add-dogs',
+  templateUrl: './add-dogs.component.html',
+  styleUrls: ['./add-dogs.component.scss']
 })
-export class ZooComponent {
+export class AddDogsComponent {
 
 
   constructor(
@@ -24,16 +22,16 @@ export class ZooComponent {
       event.stopPropagation();
       event.preventDefault();
       const value = (event.target as EventTarget as HTMLInputElement).value
-      this.addAnimal(value);
+      this.addDog(value);
 
     }
   }
 
-  addAnimal(value: string){
+  addDog(value: string){
     if(!value){
       return;
     }
-    this.store.dispatch(new AnimalActions.AddAnimal(value));
+    this.store.dispatch(new DogActions.AddDog(value));
     (document.querySelector('#nameAnimal') as HTMLInputElement).value = '';
   }
 }

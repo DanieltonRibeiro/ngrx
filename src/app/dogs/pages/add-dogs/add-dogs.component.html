@@ -1,0 +1,6 @@
+<form>
+  <input type="text" #nameAnimal (keydown)="getKeyCode($event)" id="nameAnimal">
+  <button (click)="addDog(nameAnimal.value)" type="button" role="button" class="btn btn-primary">Adicionar animal</button>
+</form>
+
+<app-all-favorites-dogs></app-all-favorites-dogs>

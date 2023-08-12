@@ -3,8 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  URL_API_DOG: 'https://dog.ceo/api/',
 };
+
+/*
+  Documentation do API Dog
+  https://dog.ceo/dog-api/documentation/sub-breed
+*/
 
 /*
  * For easier debugging in development mode, you can import the following file

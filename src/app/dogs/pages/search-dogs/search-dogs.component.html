@@ -1,0 +1,126 @@
+<section class="container">
+  <div class="row gx-0 justify-content-between">
+    <div class="col-3">
+      <ul class="nav flex-column nav-pills sticky-top"
+          id="myTab"
+          role="tablist"
+          aria-orientation="vertical">
+        <li class="nav-item"
+            role="presentation">
+          <button class="nav-link active"
+                  id="home-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#home"
+                  type="button"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true">
+            Todos os dogs
+          </button>
+        </li>
+        <li class="nav-item"
+            role="presentation">
+          <button class="nav-link"
+                  id="profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="search"
+                  aria-selected="false">Pesquisar dog
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8">
+      <!-- Tab panes -->
+      <div class="tab-content px-2">
+        <div class="tab-pane active"
+             id="home"
+             role="tabpanel"
+             aria-labelledby="home-tab"
+             tabindex="0">
+          <ng-container *ngIf="(allImagensOfDogsByBreed$ | async) as imagesByBreed">
+            <div class="row">
+              <ng-container *ngFor="let image of imagesByBreed">
+                <div class="col-6 col-lg-3">
+                  <div class="ratio ratio-1x1">
+                    <img [src]="image"
+                         loading="lazy"
+                         title="image of Dog"
+                         alt="">
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+
+        </div>
+        <div class="tab-pane"
+             id="profile"
+             role="tabpanel"
+             aria-labelledby="search"
+             tabindex="0"><p>
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+          faucibus risus eu tellus mollis, malesuada pellentesque tellus
+          interdum. Nullam pulvinar mi hendrerit, faucibus metus id, vestibulum
+          ante. Duis sit amet lorem vel augue venenatis porta. Fusce bibendum
+          vestibulum risus sit amet porta. Nam vulputate nisi id feugiat
+          ultrices. Sed gravida rutrum blandit. Aliquam at ligula pharetra
+          tortor venenatis pellentesque. Vivamus sagittis eget orci eu pulvinar.
+          Duis sollicitudin ante blandit, consequat nulla sit amet, vehicula
+          tellus. Donec mollis iaculis finibus. Nunc feugiat bibendum porttitor.
+          Donec ex magna, varius id lacus vitae, laoreet ultrices diam. Fusce
+          ligula sapien, iaculis eget augue ut, cursus consequat ex. Suspendisse
+          porta, est et dapibus vestibulum, nibh ex dictum odio, ultricies
+          faucibus augue orci a mauris.
+
+          Nulla magna arcu, maximus id pharetra at, auctor sit amet mauris. Sed
+          tempor neque sit amet metus sollicitudin, et ullamcorper lacus
+          interdum. Aenean neque dui, dapibus in turpis vel, viverra tincidunt
+          felis. Nunc fermentum viverra nisi, vestibulum malesuada odio lobortis
+          at. Class aptent taciti sociosqu ad litora torquent per conubia
+          nostra, per inceptos himenaeos. Cras et purus rhoncus, accumsan lacus
+          at, ornare sapien. Duis ullamcorper ultricies sem non vulputate.
+
+          Ut gravida accumsan tempus. Proin et magna ex. Nulla facilisi.
+          Pellentesque mollis fermentum fringilla. Proin semper, est a mollis
+          eleifend, nulla libero convallis justo, quis aliquam nisl libero quis
+          turpis. In hac habitasse platea dictumst. Sed ornare luctus risus et
+          maximus. Fusce aliquet mi ut neque pellentesque tempus. Integer vitae
+          velit id orci vestibulum cursus molestie vitae dolor. Aliquam
+          porttitor volutpat tempus.
+
+          Nam dictum orci et mauris gravida iaculis. Morbi luctus sem sed neque
+          efficitur, vitae elementum lacus tincidunt. Donec ultricies eros
+          sapien, sit amet sagittis nisl mollis vel. Curabitur ac dignissim est.
+          Morbi dignissim tortor justo, eu facilisis nibh mattis pretium.
+          Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Nullam cursus odio purus, vel commodo nisi finibus
+          at. Curabitur vestibulum, dui ac dapibus gravida, massa diam malesuada
+          nunc, vitae tristique magna libero aliquam libero. Nullam augue ipsum,
+          rhoncus non finibus vitae, porta non leo. Nunc tincidunt velit eu
+          placerat volutpat. Aliquam lorem tellus, dignissim a euismod in,
+          vestibulum ac odio. Donec sit amet dolor vel diam laoreet pharetra in
+          dictum mauris. Quisque sem ex, mollis congue metus suscipit, efficitur
+          vestibulum purus. Aliquam erat volutpat. Nulla quis est sagittis,
+          commodo felis quis, suscipit elit.
+
+          Curabitur accumsan posuere metus. Nullam ut elementum dolor.
+          Suspendisse interdum quis justo a ornare. Duis bibendum, libero in
+          volutpat dapibus, dolor ligula luctus tellus, sit amet hendrerit elit
+          nibh non metus. Nam orci nulla, varius sed risus ac, iaculis laoreet
+          nunc. Nulla massa tortor, fermentum nec erat eget, dignissim mollis
+          lectus. Nunc accumsan ex in sagittis facilisis. Donec augue magna,
+          hendrerit ut scelerisque nec, euismod eu odio. Suspendisse posuere
+          ornare ante, cursus porta lacus laoreet nec. Vivamus velit diam,
+          vestibulum non metus consequat, laoreet placerat velit. Orci varius
+          natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. </p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

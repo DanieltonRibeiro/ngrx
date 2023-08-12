@@ -6,10 +6,11 @@ import { environment } from '../environments/environment';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { ZooModule } from './zoo/zoo.module';
 import { CommonModule } from '@angular/common';
-import { ZooComponent } from './zoo/zoo.component';
-import { AnimalsState } from './states/animals.states';
+import { DogState } from './dogs/states/animals.states';
+import { AddDogsModule } from './dogs/pages/add-dogs/add-dogs.module';
+import { SearchDogsModule } from './dogs/pages/search-dogs/search-dogs.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,14 @@ import { AnimalsState } from './states/animals.states';
   imports: [
     BrowserModule,
     CommonModule,
-    NgxsModule.forRoot([AnimalsState], {
-      developmentMode: !environment.production
+    NgxsModule.forRoot([DogState], {
+      developmentMode: !environment.production,
     }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
-    ZooModule
+    AddDogsModule,
+    SearchDogsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
