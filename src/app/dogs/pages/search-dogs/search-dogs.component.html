@@ -7,27 +7,27 @@
           aria-orientation="vertical">
         <li class="nav-item"
             role="presentation">
-          <button class="nav-link active"
+          <button class="nav-link "
                   id="home-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#home"
                   type="button"
                   role="tab"
                   aria-controls="home"
-                  aria-selected="true">
+                  aria-selected="false">
             Todos os dogs
           </button>
         </li>
         <li class="nav-item"
             role="presentation">
-          <button class="nav-link"
+          <button class="nav-link active"
                   id="profile-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#profile"
                   type="button"
                   role="tab"
                   aria-controls="search"
-                  aria-selected="false">Pesquisar dog
+                  aria-selected="true">Pesquisar dog
           </button>
         </li>
       </ul>
@@ -35,7 +35,7 @@
     <div class="col-8">
       <!-- Tab panes -->
       <div class="tab-content px-2">
-        <div class="tab-pane active"
+        <div class="tab-pane "
              id="home"
              role="tabpanel"
              aria-labelledby="home-tab"
@@ -56,11 +56,11 @@
           </ng-container>
 
         </div>
-        <div class="tab-pane"
+        <div class="tab-pane active"
              id="profile"
              role="tabpanel"
-             aria-labelledby="search"
-             tabindex="0"><p>
+             aria-labelledby="search" @flyInOut
+             tabindex="0"><p @flyInOut>
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           faucibus risus eu tellus mollis, malesuada pellentesque tellus
@@ -117,7 +117,8 @@
           ornare ante, cursus porta lacus laoreet nec. Vivamus velit diam,
           vestibulum non metus consequat, laoreet placerat velit. Orci varius
           natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-          mus. </p></div>
+          mus. </p>
+        </div>
       </div>
     </div>
   </div>
