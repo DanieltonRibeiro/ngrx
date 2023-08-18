@@ -3,7 +3,7 @@ import { map, Observable } from 'rxjs';
 import { DogService } from '../../services/dog.service';
 import {
   animate,
-  group,
+  group, keyframes, query, stagger,
   style,
   transition,
   trigger,
@@ -15,32 +15,25 @@ import {
   styleUrls: ['./search-dogs.component.scss'],
   animations: [trigger('flyInOut', [
       transition(':enter', [
-        style({
-          transition: 'transform .4s ease-in',
-          transform: 'translateX(-200%)',
-          opacity: 0
-        }),
-        group([
-          animate('0.3s 0.1s linear', style({
-            transform: 'translateX(0)',
-            width: '*',
-          })),
-          animate('0.3s ease', style({
-            opacity: 1,
-
-          }))
-        ])
-      ]),
-      transition(':leave', [
-        group([
-          animate('0.3s ease', style({
-            transform: 'translateX(100%)',
-            width: '*'
-          })),
-          animate('0.3s 0.2s ease', style({
-            opacity: 0
-          }))
-        ])
+        query(':enter', [
+            style({
+              transform: 'translateX(-200%)',
+              opacity: 0
+            }),
+            stagger(200, [
+              animate('500ms ease-out', keyframes([
+                style({
+                  opacity: 1,
+                  transform: 'translateX(15%)',
+                  offset: 0.4
+                }),
+                style({
+                  transform: 'translateX(0)',
+                  offset: 1
+                })
+              ]))
+            ])
+        ],{optional: true}),
       ])
     ])
   ]

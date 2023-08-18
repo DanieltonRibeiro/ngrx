@@ -41,12 +41,13 @@
              aria-labelledby="home-tab"
              tabindex="0">
           <ng-container *ngIf="(allImagensOfDogsByBreed$ | async) as imagesByBreed">
-            <div class="row">
+            <div class="row" @flyInOut>
               <ng-container *ngFor="let image of imagesByBreed">
                 <div class="col-6 col-lg-3">
-                  <div class="ratio ratio-1x1">
+                  <div >
                     <img [src]="image"
                          loading="lazy"
+                         style="max-width: 100%"
                          title="image of Dog"
                          alt="">
                   </div>
@@ -59,8 +60,8 @@
         <div class="tab-pane active"
              id="profile"
              role="tabpanel"
-             aria-labelledby="search" @flyInOut
-             tabindex="0"><p @flyInOut>
+             aria-labelledby="search"
+             tabindex="0"><p>
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           faucibus risus eu tellus mollis, malesuada pellentesque tellus
